@@ -1,18 +1,17 @@
 import React, {useState, useContext} from 'react'
-import { Questions } from '../Helpers/QuestionBank'
 import {QuizContext} from '../Helpers/Context'
 
 
 export default function Quiz() {
-    const [currQuestion, setCurrQuestion] = useState(0); //Referencia al array de QuestionBank
+    const [currQuestion, setCurrQuestion] = useState(0); 
     const [optionChosen, setOptionChosen] = useState ("")
-    const { score, setScore, setGameState } = useContext(QuizContext)
+    const { score, setScore, setGameState, Questions, setQuestions } = useContext(QuizContext)
 
     const nextQuestion = () => {
         if (Questions[currQuestion].answer == optionChosen){
             setScore(score + 1);
         }
-        alert(score)
+        //alert(score)
         setCurrQuestion(currQuestion + 1);
     }
 
@@ -41,3 +40,4 @@ export default function Quiz() {
         </div>
     )
 }
+  

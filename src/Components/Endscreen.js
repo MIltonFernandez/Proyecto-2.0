@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+  import React, { useContext } from 'react'
 import {QuizContext} from '../Helpers/Context'
 import '../App.css'
-import {Questions} from "../Helpers/QuestionBank"
 
 export default function Endscreen() {
 
@@ -10,7 +9,7 @@ export default function Endscreen() {
         setGameState ("menu");
     }
 
-    const {score, setScore, setGameState} = useContext (QuizContext);
+    const {score, setScore, setGameState, Questions, setQuestions} = useContext (QuizContext);
     return (
     <div className = "Endscreen">
         <h1>Quiz finished</h1>
@@ -19,3 +18,4 @@ export default function Endscreen() {
     </div>
     )
 }
+  
